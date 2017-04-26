@@ -3,8 +3,9 @@ $fontName: "AccessibilityFoundicons" !default;
 $classPrefix: "foundicon-" !default;
 
 @mixin i-class($name,$pua) {
+  $withslash: "\"\\f#{$pua}\"";
   .#{$classPrefix}#{$name}:before {
-    content: "\f#{$pua}";
+    content: unquote($withslash);
   }
 }
 
